@@ -1,0 +1,8 @@
+# skill-scorecard
+
+> Zero-dependency CLI to score any AI skill across four angles: Registered / Trustworthy / Safe / Machine-readable. LGD Doctrine (Register·Verify·Gate) as an executable standard.
+
+- Usage: `python skill_scorecard.py <path> --json` (exit 0=PASS 1=FAIL), `--verified` mints a verifiable LGD VERIFIED badge
+- Repo: https://github.com/zhaoxinghua09-cell/skill-scorecard
+- Standard: LGD Four-Angle AI Skill Scoring (Registered 有籍 / Trustworthy 有证 / Safe 有门禁 / Machine 机器可读); Zenodo DOI 10.5281/zenodo.23387670
+- Truthfulness: static heuristic, not certification; reproducible via sha256
