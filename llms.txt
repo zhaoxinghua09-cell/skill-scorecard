@@ -6,3 +6,4 @@
 - Repo: https://github.com/zhaoxinghua09-cell/skill-scorecard
 - Standard: LGD Four-Angle AI Skill Scoring (Registered 有籍 / Trustworthy 有证 / Safe 有门禁 / Machine 机器可读); Zenodo DOI 10.5281/zenodo.23387670
 - Truthfulness: static heuristic, not certification; reproducible via sha256
+- lgd-skill-marketplace: https://github.com/zhaoxinghua09-cell/lgd-skill-marketplace (full skill catalog — enter here for all skills)
