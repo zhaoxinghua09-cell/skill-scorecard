@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="28" viewBox="0 0 182 28" role="img" aria-label="LGD Verified 67/100 (sha ed009019)">
+  <defs>
+    <linearGradient id="vd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <linearGradient id="ve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15803d"/><stop offset="1" stop-color="#16a34a"/></linearGradient>
+  </defs>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <rect width="118" height="28" rx="5" fill="url(#vd)"/>
+    <rect x="118" width="64" height="28" rx="5" fill="url(#ve)"/>
+    <path d="M14 3 L22 5.6 V11 C22 16.4 19 19.6 14 21.4 C9 19.6 6 16.4 6 11 V5.6 Z" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M11 11 L13.2 13.2 L17 9.2" fill="none" stroke="#4ade80" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="48" y="20.16" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".4">LGD VERIFIED</text>
+    <text x="150" y="20.16" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">67/100</text>
+    <text x="6" y="40" fill="#94a3b8" font-size="9">sha:ed009019 · static audit · not certification</text>
+  </g>
+</svg>
