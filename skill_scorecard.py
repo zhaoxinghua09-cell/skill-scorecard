@@ -119,23 +119,40 @@ def score_skill(path):
         "details": details,
     }, 0 if verdict == "PASS" else 1
 
+GRADES = [(90, "A+", "#1a7f37"), (75, "A", "#2e7d32"), (60, "B", "#9a6700"), (40, "C", "#b98900"), (0, "D", "#c62828")]
+
 def make_badge(total, verdict):
-    """Self-contained SVG badge (shields.io style, zero external deps)."""
-    label, value = "score", f"{total}/100 {verdict}"
-    W = 30 + len(label) * 8 + 12 + len(value) * 8 + 12
-    color = "#3fb950" if verdict == "PASS" else "#f85149"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="20" role="img" aria-label="score: {value}">
-  <title>skill score: {value}</title>
-  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
-  <clipPath id="r"><rect width="{W}" height="20" rx="3" fill="#fff"/></clipPath>
-  <g clip-path="url(#r)">
-    <rect width="{30 + len(label) * 8 + 12}" height="20" fill="#555"/>
-    <rect x="{30 + len(label) * 8 + 12}" width="{12 + len(value) * 8 + 12}" height="20" fill="{color}"/>
-    <rect width="{W}" height="20" fill="url(#s)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
-    <text x="{15 + len(label) * 8 / 2}" y="14">{label}</text>
-    <text x="{30 + len(label) * 8 + 12 + 12 + len(value) * 8 / 2}" y="14">{value}</text>
+    """Authority-grade SVG badge: brand + exact score + rating letter.
+    权威评级徽章：品牌 + 精确分数 + 评级字母（A+~D），零外部依赖。"""
+    grade, gcolor = next((g, c) for t, g, c in GRADES if total >= t)
+    brand, score, tag = "skill-scorecard", f"{total:.0f}/100", f"{grade} / {'PASS' if verdict == 'PASS' else 'FAIL'}"
+    H = 26
+    def tw(t, fs):  # rough text width
+        return fs * 0.62 * len(t)
+    pad, fb, fs, fg = 9, 11, 11, 12
+    wb = int(pad * 2 + tw(brand, fb))
+    ws = int(pad * 2 + tw(score, fs))
+    wg = int(pad * 2 + tw(tag, fg))
+    W = wb + ws + wg
+    x1, x2 = wb, wb + ws
+    def esc(s):
+        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    brand_e, score_e, tag_e = esc(brand), esc(score), esc(tag)
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="skill-scorecard {score} {tag}">
+  <title>skill-scorecard {score} {tag}</title>
+  <defs>
+    <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a4d7d"/><stop offset="1" stop-color="#17324f"/></linearGradient>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{gcolor}"/><stop offset="1" stop-color="{gcolor}" stop-opacity=".82"/></linearGradient>
+  </defs>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <rect width="{W}" height="{H}" rx="5" fill="#ffffff" stroke="rgba(0,0,0,.10)"/>
+    <rect width="{x1}" height="{H}" fill="url(#gb)"/>
+    <rect x="{x2}" width="{wg}" height="{H}" fill="url(#gg)"/>
+    <line x1="{x1}" y1="0" x2="{x1}" y2="{H}" stroke="rgba(255,255,255,.35)"/>
+    <line x1="{x2}" y1="0" x2="{x2}" y2="{H}" stroke="rgba(0,0,0,.08)"/>
+    <text x="{x1/2}" y="17" fill="#ffffff" font-size="{fb}" font-weight="600" text-anchor="middle" letter-spacing=".4">{brand_e}</text>
+    <text x="{(x1+x2)/2}" y="17" fill="#1a1a18" font-size="{fs}" font-weight="600" text-anchor="middle">{score_e}</text>
+    <text x="{(x2+W)/2}" y="17" fill="#ffffff" font-size="{fg}" font-weight="700" text-anchor="middle" letter-spacing=".3">{tag_e}</text>
   </g>
 </svg>'''
 
