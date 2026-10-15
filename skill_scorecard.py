@@ -119,16 +119,49 @@ def score_skill(path):
         "details": details,
     }, 0 if verdict == "PASS" else 1
 
+def make_badge(total, verdict):
+    """Self-contained SVG badge (shields.io style, zero external deps)."""
+    label, value = "score", f"{total}/100 {verdict}"
+    W = 30 + len(label) * 8 + 12 + len(value) * 8 + 12
+    color = "#3fb950" if verdict == "PASS" else "#f85149"
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="20" role="img" aria-label="score: {value}">
+  <title>skill score: {value}</title>
+  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
+  <clipPath id="r"><rect width="{W}" height="20" rx="3" fill="#fff"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="{30 + len(label) * 8 + 12}" height="20" fill="#555"/>
+    <rect x="{30 + len(label) * 8 + 12}" width="{12 + len(value) * 8 + 12}" height="20" fill="{color}"/>
+    <rect width="{W}" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+    <text x="{15 + len(label) * 8 / 2}" y="14">{label}</text>
+    <text x="{30 + len(label) * 8 + 12 + 12 + len(value) * 8 / 2}" y="14">{value}</text>
+  </g>
+</svg>'''
+
 def main():
     if len(sys.argv) < 2:
-        print("usage: python skill_scorecard.py <path>", file=sys.stderr)
+        print("usage: python skill_scorecard.py <path> [--badge out.svg]", file=sys.stderr)
         return 2
-    res, code = score_skill(sys.argv[1])
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    badge_out = None
+    if "--badge" in sys.argv:
+        i = sys.argv.index("--badge")
+        if i + 1 < len(sys.argv):
+            badge_out = sys.argv[i + 1]
+    if not args:
+        print("usage: python skill_scorecard.py <path> [--badge out.svg]", file=sys.stderr)
+        return 2
+    res, code = score_skill(args[0])
     if "error" in res:
         print("ERROR:", res["error"], file=sys.stderr)
         return 2
     print(json.dumps(res, ensure_ascii=False, indent=2))
     print(f"\nVERDICT: {res['verdict']} ({res['total']}/{res['max']})")
+    if badge_out:
+        svg = make_badge(res["total"], res["verdict"])
+        open(badge_out, "w", encoding="utf-8").write(svg)
+        print(f"badge written: {badge_out}")
     return code
 
 if __name__ == "__main__":
