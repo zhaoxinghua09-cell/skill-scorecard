@@ -1,14 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="132" height="26" viewBox="0 0 132 26" role="img" aria-label="LGD: 67/100">
-  <defs>
-    <linearGradient id="sd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
-    <linearGradient id="se" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="26" viewBox="0 0 96 26" role="img" aria-label="LGD: 90/100">
   <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
-    <rect width="70" height="26" rx="5" fill="url(#sd)"/>
-    <rect x="70" width="62" height="26" rx="5" fill="url(#se)"/>
-    <rect width="132" height="26" rx="5" fill="none" stroke="rgba(255,255,255,.16)"/>
-    <g transform="translate(8,2.0) scale(0.85)"><path d="M12 2 L20 5 V11 C20 17 16.5 20.5 12 22 C7.5 20.5 4 17 4 11 V5 Z" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 11.5 L11.5 14 L15.5 9" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
-    <text x="56" y="18.72" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".5">LGD</text>
-    <text x="101.0" y="18.72" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">67/100</text>
+    <rect width="46" height="26" fill="#334155"/>
+    <rect x="46" width="50" height="26" fill="#2b6cb0"/>
+    <g transform="translate(4,3.5) scale(.95)"><path d="M5 2 L12 5.5 L12 11 C12 15.5 8.5 18 5 19.5 C1.5 18 -2 15.5 -2 11 L-2 5.5 Z" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/><path d="M2.5 11 L4.7 13.2 L7.8 9.5" fill="none" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="43.0" y="18.72" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" letter-spacing=".4">LGD</text>
+    <text x="71.0" y="18.72" fill="#ffffff" font-size="11.5" font-weight="800" text-anchor="middle">90/100</text>
   </g>
 </svg>
