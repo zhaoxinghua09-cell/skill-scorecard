@@ -72,3 +72,6 @@ python skill_scorecard.py <path> --json   # compare sha256 with the badge's stat
 MIT (code). Doctrine texts remain with the author. See LGD theory repos.
 
 © 2026 赵兴华 / Steven Zhao · ORCID 0009-0001-0512-1237
+
+## Skill Marketplace
+- lgd-skill-marketplace: https://github.com/zhaoxinghua09-cell/lgd-skill-marketplace — full skill catalog (enter from any skill).
