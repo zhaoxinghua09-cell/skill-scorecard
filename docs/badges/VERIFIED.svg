@@ -1,15 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="182" height="28" viewBox="0 0 182 28" role="img" aria-label="LGD Verified 67/100 (sha ed009019)">
-  <defs>
-    <linearGradient id="vd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
-    <linearGradient id="ve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15803d"/><stop offset="1" stop-color="#16a34a"/></linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="38" viewBox="0 0 148 38" role="img" aria-label="LGD Verified 90/100 (sha 9f3a2c1b)">
   <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
-    <rect width="118" height="28" rx="5" fill="url(#vd)"/>
-    <rect x="118" width="64" height="28" rx="5" fill="url(#ve)"/>
-    <path d="M14 3 L22 5.6 V11 C22 16.4 19 19.6 14 21.4 C9 19.6 6 16.4 6 11 V5.6 Z" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/>
-    <path d="M11 11 L13.2 13.2 L17 9.2" fill="none" stroke="#4ade80" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="48" y="20.16" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".4">LGD VERIFIED</text>
-    <text x="150" y="20.16" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">67/100</text>
-    <text x="6" y="40" fill="#94a3b8" font-size="9">sha:ed009019 · static audit · not certification</text>
+    <rect width="98" height="26" fill="#334155"/>
+    <rect x="98" width="50" height="26" fill="#2b6cb0"/>
+    <g transform="translate(4,3.5) scale(.95)"><path d="M5 2 L12 5.5 L12 11 C12 15.5 8.5 18 5 19.5 C1.5 18 -2 15.5 -2 11 L-2 5.5 Z" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/><path d="M2.5 11 L4.7 13.2 L7.8 9.5" fill="none" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="69.0" y="18.72" fill="#ffffff" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing=".4">LGD VERIFIED</text>
+    <text x="123.0" y="18.72" fill="#ffffff" font-size="11.5" font-weight="800" text-anchor="middle">90/100</text>
+    <text x="2" y="37" fill="#64748b" font-size="9">sha:9f3a2c1b · static audit · not certification</text>
   </g>
 </svg>
