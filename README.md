@@ -61,6 +61,18 @@ python skill_scorecard.py path/to/skill --json
 - Self-audit story: **34 → 76/90** after fixing machine-readable gaps — the scorer is honest, and the fixes are real.
   自评改进故事：**34 → 76/90** 分（修复机器可读缺口后）——评分器不徇私，改进是真实的。
 
+## LGD VERIFIED badge / 认证徽章
+
+Pass a skill and mint your own verifiable **LGD VERIFIED** badge — it embeds a SHA-256 content hash; static audit, **NOT a certification or endorsement**:
+技能达标即可生成可验证的 **LGD VERIFIED** 认证徽章——内含 SHA-256 内容哈希；静态评测，**非官方认证、非背书**：
+
+```bash
+python skill_scorecard.py path/to/skill --verified LGD_VERIFIED.svg
+```
+
+High scorers may display the badge in their README. Anyone can verify: rerun `--json` and compare `sha256`.
+高分技能可自行在 README 中展示徽章。任何人均可验证：重跑 `--json` 比对 `sha256`。
+
 ## License / 许可
 
 MIT (code) · Theory texts (LGD Doctrine) remain with the author. See LGD theory repos for the doctrine.
