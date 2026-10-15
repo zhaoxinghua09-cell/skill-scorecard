@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="26" viewBox="0 0 132 26" role="img" aria-label="LGD: 67/100">
+  <defs>
+    <linearGradient id="sd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <linearGradient id="se" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+  </defs>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <rect width="70" height="26" rx="5" fill="url(#sd)"/>
+    <rect x="70" width="62" height="26" rx="5" fill="url(#se)"/>
+    <rect width="132" height="26" rx="5" fill="none" stroke="rgba(255,255,255,.16)"/>
+    <g transform="translate(8,2.0) scale(0.85)"><path d="M12 2 L20 5 V11 C20 17 16.5 20.5 12 22 C7.5 20.5 4 17 4 11 V5 Z" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 11.5 L11.5 14 L15.5 9" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="56" y="18.72" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".5">LGD</text>
+    <text x="101.0" y="18.72" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">67/100</text>
+  </g>
+</svg>
