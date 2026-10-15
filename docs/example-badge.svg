@@ -1,14 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="182" height="20" role="img" aria-label="score: 90/100 PASS">
-  <title>skill score: 90/100 PASS</title>
-  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
-  <clipPath id="r"><rect width="182" height="20" rx="3" fill="#fff"/></clipPath>
-  <g clip-path="url(#r)">
-    <rect width="82" height="20" fill="#555"/>
-    <rect x="82" width="112" height="20" fill="#3fb950"/>
-    <rect width="182" height="20" fill="url(#s)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
-    <text x="35.0" y="14">score</text>
-    <text x="138.0" y="14">90/100 PASS</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="262" height="26" viewBox="0 0 262 26" role="img" aria-label="skill-scorecard 90/100 A+ / PASS">
+  <title>skill-scorecard 90/100 A+ / PASS</title>
+  <defs>
+    <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a4d7d"/><stop offset="1" stop-color="#17324f"/></linearGradient>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a7f37"/><stop offset="1" stop-color="#1a7f37" stop-opacity=".82"/></linearGradient>
+  </defs>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <rect width="262" height="26" rx="5" fill="#ffffff" stroke="rgba(0,0,0,.10)"/>
+    <rect width="120" height="26" fill="url(#gb)"/>
+    <rect x="178" width="84" height="26" fill="url(#gg)"/>
+    <line x1="120" y1="0" x2="120" y2="26" stroke="rgba(255,255,255,.35)"/>
+    <line x1="178" y1="0" x2="178" y2="26" stroke="rgba(0,0,0,.08)"/>
+    <text x="60.0" y="17" fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" letter-spacing=".4">skill-scorecard</text>
+    <text x="149.0" y="17" fill="#1a1a18" font-size="11" font-weight="600" text-anchor="middle">90/100</text>
+    <text x="220.0" y="17" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".3">A+ / PASS</text>
   </g>
 </svg>
