@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="113" height="26" viewBox="0 0 113 26" role="img" aria-label="MACH: 58/100">
+  <defs>
+    <linearGradient id="sd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+    <linearGradient id="se" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <rect width="51" height="26" rx="5" fill="url(#sd)"/>
+    <rect x="51" width="62" height="26" rx="5" fill="url(#se)"/>
+    <rect width="113" height="26" rx="5" fill="none" stroke="rgba(255,255,255,.16)"/>
+    
+    <text x="30" y="18.72" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".5">MACH</text>
+    <text x="82.0" y="18.72" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">58/100</text>
+  </g>
+</svg>
