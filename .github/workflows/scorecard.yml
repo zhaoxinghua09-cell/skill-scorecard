@@ -1,0 +1,42 @@
+name: skill-scorecard
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '**/SKILL.md'
+      - '**/AGENTS.md'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  score:
+    name: Grade AI skills (fail-closed)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run skill-scorecard on the repo
+        run: |
+          python -c "import urllib.request; urllib.request.urlretrieve('https://raw.githubusercontent.com/zhaoxinghua09-cell/skill-scorecard/main/skill_scorecard.py', 'skill_scorecard.py')"
+          python skill_scorecard.py . || true
+          # fail-closed: any SKILL.md/AGENTS.md that scores <60 fails the CI
+          python - <<'PY'
+          import glob, os, subprocess, sys
+          files = glob.glob('**/*.md', recursive=True)
+          targets = [f for f in files if os.path.basename(f).upper() in ('SKILL.MD', 'AGENTS.MD', 'CLAUDE.MD')]
+          if not targets:
+              print('no skill files found; skipping grade gate')
+              sys.exit(0)
+          failed = []
+          for f in targets:
+              r = subprocess.run([sys.executable, 'skill_scorecard.py', f], capture_output=True, text=True)
+              print(r.stdout[-400:])
+              if r.returncode != 0:
+                  failed.append(f)
+          if failed:
+              print('FAIL-CLOSED: skills below bar:', failed)
+              sys.exit(1)
+          PY
