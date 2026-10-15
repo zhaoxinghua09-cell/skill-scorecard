@@ -1,14 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="121" height="26" viewBox="0 0 121 26" role="img" aria-label="TRUST: 90/100">
-  <defs>
-    <linearGradient id="sd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
-    <linearGradient id="se" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0891b2"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="26" viewBox="0 0 89 26" role="img" aria-label="TRUST: 85/100">
   <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
-    <rect width="59" height="26" rx="5" fill="url(#sd)"/>
-    <rect x="59" width="62" height="26" rx="5" fill="url(#se)"/>
-    <rect width="121" height="26" rx="5" fill="none" stroke="rgba(255,255,255,.16)"/>
+    <rect width="39" height="26" fill="#334155"/>
+    <rect x="39" width="50" height="26" fill="#10b981"/>
     
-    <text x="30" y="18.72" fill="#fff" font-size="12" font-weight="700" text-anchor="middle" letter-spacing=".5">TRUST</text>
-    <text x="90.0" y="18.72" fill="#fff" font-size="12" font-weight="800" text-anchor="middle">90/100</text>
+    <text x="19.5" y="18.72" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" letter-spacing=".4">TRUST</text>
+    <text x="64.0" y="18.72" fill="#ffffff" font-size="11.5" font-weight="800" text-anchor="middle">85/100</text>
   </g>
 </svg>
