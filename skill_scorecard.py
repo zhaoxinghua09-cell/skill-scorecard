@@ -119,40 +119,26 @@ def score_skill(path):
         "details": details,
     }, 0 if verdict == "PASS" else 1
 
-GRADES = [(90, "A+", "#1a7f37"), (75, "A", "#2e7d32"), (60, "B", "#9a6700"), (40, "C", "#b98900"), (0, "D", "#c62828")]
-
 def make_badge(total, verdict):
-    """Authority-grade SVG badge: brand + exact score + rating letter.
-    权威评级徽章：品牌 + 精确分数 + 评级字母（A+~D），零外部依赖。"""
-    grade, gcolor = next((g, c) for t, g, c in GRADES if total >= t)
-    brand, score, tag = "skill-scorecard", f"{total:.0f}/100", f"{grade} / {'PASS' if verdict == 'PASS' else 'FAIL'}"
-    H = 26
-    def tw(t, fs):  # rough text width
-        return fs * 0.62 * len(t)
-    pad, fb, fs, fg = 9, 11, 11, 12
-    wb = int(pad * 2 + tw(brand, fb))
-    ws = int(pad * 2 + tw(score, fs))
-    wg = int(pad * 2 + tw(tag, fg))
-    W = wb + ws + wg
-    x1, x2 = wb, wb + ws
-    def esc(s):
-        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    brand_e, score_e, tag_e = esc(brand), esc(score), esc(tag)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="skill-scorecard {score} {tag}">
-  <title>skill-scorecard {score} {tag}</title>
-  <defs>
-    <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a4d7d"/><stop offset="1" stop-color="#17324f"/></linearGradient>
-    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{gcolor}"/><stop offset="1" stop-color="{gcolor}" stop-opacity=".82"/></linearGradient>
-  </defs>
+    """Two-segment shields-style badge: LGD brand + exact score. Zero external deps.
+    两段式徽章：LGD 品牌段 + 精确分数段（业界 shields 范式，一个徽章一个信号）。"""
+    label, value = "LGD", f"{total:.0f}/100"
+    vcolor = "#2e7d32" if verdict == "PASS" else "#c62828"
+    H = 20
+    def tw(t, s): return s * 0.62 * len(t)
+    pad, fl, fv = 6, 11, 11
+    wl = int(pad * 2 + tw(label, fl))
+    wv = int(pad * 2 + tw(value, fv))
+    W = wl + wv
+    esc = lambda s: s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(label)}: {esc(value)}">
+  <title>{esc(label)}: {esc(value)}</title>
   <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
-    <rect width="{W}" height="{H}" rx="5" fill="#ffffff" stroke="rgba(0,0,0,.10)"/>
-    <rect width="{x1}" height="{H}" fill="url(#gb)"/>
-    <rect x="{x2}" width="{wg}" height="{H}" fill="url(#gg)"/>
-    <line x1="{x1}" y1="0" x2="{x1}" y2="{H}" stroke="rgba(255,255,255,.35)"/>
-    <line x1="{x2}" y1="0" x2="{x2}" y2="{H}" stroke="rgba(0,0,0,.08)"/>
-    <text x="{x1/2}" y="17" fill="#ffffff" font-size="{fb}" font-weight="600" text-anchor="middle" letter-spacing=".4">{brand_e}</text>
-    <text x="{(x1+x2)/2}" y="17" fill="#1a1a18" font-size="{fs}" font-weight="600" text-anchor="middle">{score_e}</text>
-    <text x="{(x2+W)/2}" y="17" fill="#ffffff" font-size="{fg}" font-weight="700" text-anchor="middle" letter-spacing=".3">{tag_e}</text>
+    <rect width="{wl}" height="{H}" fill="#1e3a5f"/>
+    <rect x="{wl}" width="{wv}" height="{H}" fill="{vcolor}"/>
+    <rect width="{W}" height="{H}" rx="3"/>
+    <text x="{wl/2}" y="{H*0.72}" fill="#ffffff" font-size="{fl}" font-weight="700" text-anchor="middle" letter-spacing=".4">{esc(label)}</text>
+    <text x="{wl+wv/2}" y="{H*0.72}" fill="#ffffff" font-size="{fv}" font-weight="700" text-anchor="middle">{esc(value)}</text>
   </g>
 </svg>'''
 
