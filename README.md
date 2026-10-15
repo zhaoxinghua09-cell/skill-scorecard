@@ -60,11 +60,44 @@ VERDICT: PASS (80/100)
 
 A `placeholder`-laden skill scores ~7/100 and exits 1. 一个带占位措辞的技能约 7/100 分并以退出码 1 结束。
 
+## Badge（评分徽章）
+
+Generate a self-contained SVG badge and drop it in your README — the score becomes visible at a glance.
+
+生成自包含 SVG 徽章放进 README——分数一眼可见。
+
+```bash
+python skill_scorecard.py ./my-skill --badge badge.svg
+# then embed:  <img src="badge.svg" alt="skill score">
+```
+
+![skill score badge example](docs/example-badge.svg)
+
+## GitHub Action（CI 集成）
+
+Add `.github/workflows/scorecard.yml` (copy from this repo) — any SKILL.md/AGENTS.md scoring below 60 fails the build (**fail-closed**).
+
+把 `.github/workflows/scorecard.yml` 复制进你的仓库（本仓自带）——任何低于 60 分的技能文件都会让构建失败（**故障闭合**）。
+
+```yaml
+# .github/workflows/scorecard.yml  (see this repo for full copy)
+name: skill-scorecard
+on: [push, pull_request]
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: python -c "import urllib.request; urllib.request.urlretrieve('https://raw.githubusercontent.com/zhaoxinghua09-cell/skill-scorecard/main/skill_scorecard.py','skill_scorecard.py')"
+      - run: python skill_scorecard.py .   # <60 fails the build
+```
+
 ## Roadmap（路线）
 
 - [x] v0.1 — core scoring, 7 dimensions, JSON output, fail-closed exit codes
+- [x] v0.3 — **SVG badge generation (`--badge`) + GitHub Action workflow**
 - [ ] v0.2 — recursive scan of a skill directory tree; aggregate report
-- [ ] v0.3 — GitHub Action; badge generation (like OpenSSF Scorecard badges)
 - [ ] v0.4 — plugin rules (custom dimension weights)
 
 ## License
