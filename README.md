@@ -61,10 +61,10 @@ python skill_scorecard.py path/to/skill --json
 - Self-audit story: **34 → 76/90** after fixing machine-readable gaps — the scorer is honest, and the fixes are real.
   自评改进故事：**34 → 76/90** 分（修复机器可读缺口后）——评分器不徇私，改进是真实的。
 
-## LGD VERIFIED badge / 认证徽章
+## LGD evaluation scorecard card / 评测记分卡
 
 Pass a skill and mint your own verifiable **LGD VERIFIED** badge — it embeds a SHA-256 content hash; static audit, **NOT a certification or endorsement**:
-技能达标即可生成可验证的 **LGD VERIFIED** 认证徽章——内含 SHA-256 内容哈希；静态评测，**非官方认证、非背书**：
+达到记分卡阈值即可生成可验证的 **LGD evaluation card**——内含 SHA-256 内容哈希；静态评测，**非官方认证、非背书、非监管认可**：
 
 ```bash
 python skill_scorecard.py path/to/skill --verified LGD_VERIFIED.svg
@@ -75,7 +75,10 @@ High scorers may display the badge in their README. Anyone can verify: rerun `--
 
 ## License / 许可
 
-MIT (code) · Theory texts (LGD Doctrine) remain with the author. See LGD theory repos for the doctrine.
-MIT（代码）· 理论文本（LGD 全程治理论）版权归作者所有，理论详见 LGD 理论仓。
-
-© 2026 赵兴华 / Steven Zhao · ORCID 0009-0001-0512-1237
+代码许可 (code license) : MIT (see LICENSE)
+© 2026 赵兴华 / Steven Zhao (ORCID 0009-0001-0512-1237). All rights reserved.
+理论署名 (attribution) : LGD（Lifecycle Governance Doctrine / 全程治理论）— SynomosAI initiative
+名称状态 (name status)  : "SynomosAI" / "MedXpert" — 未申请实体注册、未申请商标注册
+                        (not a registered legal entity; no trademark registered)
+贡献者 (contributors)   : LGD 理论组（ResearchGroup）— 理论起草与评审集体署名
+Theory texts (LGD Doctrine) remain with the author; see LGD theory repos for the doctrine.
