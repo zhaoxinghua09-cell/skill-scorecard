@@ -1,4 +1,5 @@
 # skill-scorecard · LGD Four-Angle AI Skill Scoring
+[![Trust Score](https://img.shields.io/badge/Trust%20Score-99%2F100%20A+-2ea44f.svg)](https://github.com/zhaoxinghua09-cell/skillgate)
 
 > One command, zero dependencies — score any AI skill across four angles: **Registered AI · Trustworthy AI · Safe AI · Machine-Readable**.
 > 一条命令、零依赖——从四个角度给任意 AI 技能成体系评分：**已注册 · 可信 · 安全 · 机器可读**。
@@ -79,3 +80,12 @@ MIT (code) · Theory texts (LGD Doctrine) remain with the author. See LGD theory
 MIT（代码）· 理论文本（LGD 全程治理论）版权归作者所有，理论详见 LGD 理论仓。
 
 © 2026 赵兴华 / Steven Zhao · ORCID 0009-0001-0512-1237
+
+## Ecosystem / 生态闭环
+
+- [awesome-trusted-agents](https://github.com/zhaoxinghua09-cell/awesome-trusted-agents) — 四角度评分精选清单（生态榜单入口）
+- [skill-scorecard](https://github.com/zhaoxinghua09-cell/skill-scorecard) — 四角度评分引擎
+- [lgd-hub](https://github.com/zhaoxinghua09-cell/lgd-hub) — LGD 理论资产统一入口
+- [lgd-skill-marketplace](https://github.com/zhaoxinghua09-cell/lgd-skill-marketplace) — LGD 技能超市总目录
+- [governanceos](https://github.com/zhaoxinghua09-cell/governanceos) — 治理编排枢纽（SPEC→PLAN→GATE→AUDIT→EVO）
+- [skillgate](https://github.com/zhaoxinghua09-cell/skillgate) — 技能信任评分引擎
